@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+
+  <span>Library App</span>
+  <span class="spacer"></span>
+
+  <button [matMenuTriggerFor]="menu" mat-icon-button>
+    <mat-icon aria-label="menu" style="color: black;">more_vert</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+
+    <button *ngIf="!isLoggedIn()" [routerLink]="['users/login']" mat-menu-item>
+      <mat-icon aria-label="login">fingerprint</mat-icon>
+      <span>Login</span>
+    </button>
+
+    <button *ngIf="!isLoggedIn()" [routerLink]="['users/register']" mat-menu-item>
+      <mat-icon aria-label="register">star</mat-icon>
+      <span>Register</span>
+    </button>
+
+    <button (click)="logout()" *ngIf="isLoggedIn()" mat-menu-item>
+      <mat-icon aria-label="logout">exit_to_app</mat-icon>
+      <span>Logout</span>
+    </button>
+
+  </mat-menu>
+
+</mat-toolbar>
+
+<div class="formComponent">
+  <router-outlet ></router-outlet>
+</div>

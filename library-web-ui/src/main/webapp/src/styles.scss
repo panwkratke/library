@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@import "my-theme";
+
+body {
+  background-color: #C5CAE9;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.cdkContainer {
+  height: 420px;
+}
+.cdkContainer::-webkit-scrollbar {
+  display: none;
+}
+
+nav a:visited, a:link {
+  margin-left: 10px;
+  color: #607D8B;
+}
+
+p {
+  color: lightslategrey;
+}
+
+mat-icon {
+  color: darkslateblue;
+}

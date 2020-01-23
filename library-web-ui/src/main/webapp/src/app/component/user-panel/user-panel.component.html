@@ -1,0 +1,93 @@
+<mat-toolbar color="accent" id="navbar">
+
+  <div id="menu">
+
+    <mat-expansion-panel (closed)="panelOpenState = false" (opened)="panelOpenState = true">
+      <mat-expansion-panel-header>
+
+        <mat-panel-title>
+          <span style="font-weight: bold; font-size: 18px;">User details</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <span>User first name: </span><span style="color:darkblue; font-weight: bold;">{{user.firstName}}</span><br>
+      <span>User last name: </span><span style="color:darkblue; font-weight: bold;">{{user.lastName}}</span><br>
+      <span>User username: </span><span style="color:darkblue; font-weight: bold;">{{user.username}}</span><br>
+      <span>Registered at: </span><span
+      style="color:darkblue; font-weight: bold;">{{user.creationDate}}</span><br>
+
+      <span>Session timeout at: </span><span style="color:darkblue; font-weight: bold;">{{expDate}}</span><br>
+
+      <a [routerLink]="[user.id]">Update your details</a>
+
+    </mat-expansion-panel>
+
+  </div>
+
+  <div *ngIf="isAdmin" id="menu">
+
+    <button [matMenuTriggerFor]="orders" id="menu" mat-button>
+      <mat-icon aria-label="menuPart">dehaze</mat-icon>
+      Orders
+    </button>
+
+    <mat-menu #orders="matMenu">
+      <a [routerLink]="['ordersview']">All created orders</a><br>
+    </mat-menu>
+
+    <button [matMenuTriggerFor]="users" id="menu" mat-button>
+      <mat-icon aria-label="menuPart">dehaze</mat-icon>
+      Users
+    </button>
+
+    <mat-menu #users="matMenu">
+      <a [routerLink]="['usersview']">All created users</a><br>
+    </mat-menu>
+
+    <button [matMenuTriggerFor]="books" id="menu" mat-button>
+      <mat-icon aria-label="menuPart">dehaze</mat-icon>
+      Books
+    </button>
+
+    <mat-menu #books="matMenu">
+      <a [routerLink]="['booksview']">All created books</a><br>
+      <a [routerLink]="['booksview/addBook/new']">Add new book</a>
+    </mat-menu>
+
+  </div>
+
+  <div *ngIf="!isAdmin" id="menu">
+
+    <button [matMenuTriggerFor]="orders" id="menu" mat-button>
+      <mat-icon aria-label="menuPart">dehaze</mat-icon>
+      My books
+    </button>
+
+    <mat-menu #orders="matMenu">
+      <a [routerLink]="['ordersview']">All borrowed book</a><br>
+    </mat-menu>
+
+    <button [matMenuTriggerFor]="books" id="menu" mat-button>
+      <mat-icon aria-label="menuPart">dehaze</mat-icon>
+      Find a book
+    </button>
+
+    <mat-menu #books="matMenu">
+      <a [routerLink]="['booksview']">Search for books</a><br>
+    </mat-menu>
+
+  </div>
+
+  <nav>
+
+    <a (click)="home()">
+      <mat-icon aria-label="home" style="color: black;">home</mat-icon>
+    </a>
+
+  </nav>
+
+</mat-toolbar>
+
+<div id="child">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,40 @@
+<mat-list *ngIf="borrowOrderLoaded" role="list">
+
+  <mat-list-item>
+    <mat-icon matListIcon>create</mat-icon>
+    <h3 matLine>{{borrowOrder.book.title}}</h3>
+    <p matLine>Book title</p>
+  </mat-list-item>
+
+  <mat-list-item>
+    <mat-icon matListIcon>person</mat-icon>
+    <h3 matLine>{{borrowOrder.user.username}}</h3>
+    <p matLine>User username</p>
+  </mat-list-item>
+
+  <mat-list-item>
+    <mat-icon matListIcon>event_note</mat-icon>
+    <h3 matLine>{{borrowOrder.orderNumber}}</h3>
+    <p matLine>Borrow order number</p>
+  </mat-list-item>
+
+  <mat-list-item>
+    <mat-icon matListIcon>star</mat-icon>
+    <h3 matLine>{{borrowOrder.id}}</h3>
+    <p matLine>Borrow order id</p>
+  </mat-list-item>
+
+  <mat-list-item>
+    <mat-icon matListIcon>date_range</mat-icon>
+    <h3 matLine>{{borrowOrder.creationDate}}</h3>
+    <p matLine>Borrow order creation date</p>
+  </mat-list-item>
+
+  <mat-list-item>
+    <button (click)="returnBook(borrowOrder.id)" mat-button>
+      <mat-icon matListIcon>call_made</mat-icon>
+      <span>Return this book</span>
+    </button>
+  </mat-list-item>
+
+</mat-list>

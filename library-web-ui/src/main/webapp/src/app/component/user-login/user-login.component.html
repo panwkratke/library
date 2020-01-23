@@ -1,0 +1,31 @@
+<div id="loginComponent">
+
+  <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+
+    <div id="login-container">
+
+      <mat-form-field hintLabel="Min 4 characters">
+        <input #input formControlName="username" id="username" matInput minlength="4"
+               placeholder="Enter usernname">
+        <mat-hint align="end">{{input.value?.length || 0}}/4</mat-hint>
+        <mat-error *ngIf="input.value?.length < 4">Username min length required = 4</mat-error>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field hintLabel="Min 4 characters">
+        <input #input [type]="'password'" formControlName="password" id="password" matInput minlength="4"
+               placeholder="Enter password">
+        <mat-hint align="end">{{input.value?.length || 0}}/4</mat-hint>
+        <mat-error *ngIf="input.value?.length < 4">Password min length required = 4</mat-error>
+      </mat-form-field>
+      <br>
+
+      <button mat-raised-button type="submit" [disabled]="loginForm.invalid">Log in</button>
+      <button mat-raised-button type="reset">Reset</button>
+
+    </div>
+
+  </form>
+
+</div>
+

@@ -1,0 +1,64 @@
+<div class="usersView">
+
+  <div class="splitComponent">
+
+    <div class="splitPart1">
+
+      <cdk-virtual-scroll-viewport class="cdkContainer" itemSize="10">
+
+        <mat-nav-list *ngFor="let user of users" role="list">
+
+          <a [routerLink]="['/library/userpanel/usersview', user.id]" mat-list-item>
+            <mat-icon matListIcon>face</mat-icon>
+            <h3 matLine>{{user.username}}</h3>
+            <p matLine>{{user.role}}</p>
+          </a>
+          <mat-divider></mat-divider>
+
+        </mat-nav-list>
+
+      </cdk-virtual-scroll-viewport>
+
+    </div>
+
+    <div class="splitPart2">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+
+  <div class="splitComponent" style="margin-top: 20px;">
+
+    <div class="splitPart3">
+
+    </div>
+
+    <div class="splitPart4" style="justify-content: left;">
+
+      <div class="searchComponent">
+
+        <form (ngSubmit)="onSubmitByUserId()" [formGroup]="searchByUserId">
+
+          <div class="searchContainer">
+
+            <mat-form-field hintLabel="Min 1 character">
+              <input #input formControlName="userId" id="userId" matInput minlength="1"
+                     placeholder="Enter the user id">
+              <mat-hint align="end">{{input.value?.length || 0}}/1</mat-hint>
+              <mat-error *ngIf="input.value?.length < 1">User id min length required = 1</mat-error>
+            </mat-form-field>
+
+            <button [disabled]="searchByUserId.invalid" mat-raised-button type="submit">Search by user id
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

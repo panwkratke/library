@@ -1,0 +1,46 @@
+<mat-list role="list">
+
+  <mat-list-item>
+    <mat-icon matListIcon>arrow_forward</mat-icon>
+    <h3 matLine>{{user.firstName}}</h3>
+    <p matLine>First name</p>
+  </mat-list-item>
+
+  <mat-list-item>
+    <mat-icon matListIcon>arrow_forward</mat-icon>
+    <h3 matLine>{{user.lastName}}</h3>
+    <p matLine>Last name</p>
+  </mat-list-item>
+
+  <mat-list-item>
+    <mat-icon matListIcon>arrow_forward</mat-icon>
+    <h3 matLine>{{user.username}}</h3>
+    <p matLine>Username</p>
+  </mat-list-item>
+
+  <mat-list-item>
+    <mat-icon matListIcon>arrow_forward</mat-icon>
+    <h3 matLine>{{user.role}}</h3>
+    <p matLine>Role</p>
+  </mat-list-item>
+
+  <mat-list-item>
+    <mat-icon matListIcon>star</mat-icon>
+    <h3 matLine>{{user.id}}</h3>
+    <p matLine>User id</p>
+  </mat-list-item>
+
+  <mat-list-item>
+    <mat-icon matListIcon>date_range</mat-icon>
+    <h3 matLine>{{user.creationDate}}</h3>
+    <p matLine>Register date</p>
+  </mat-list-item>
+
+  <mat-list-item matTooltip="User must not have active borrow orders">
+    <button (click)="deleteUser(user.id)" *ngIf="isCreator" [disabled]="!canDeleteUser()" mat-button>
+      <mat-icon matListIcon>person_add_disabled</mat-icon>
+      <span>Delete this user</span>
+    </button>
+  </mat-list-item>
+
+</mat-list>

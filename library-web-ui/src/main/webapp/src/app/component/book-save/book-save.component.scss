@@ -1,0 +1,14 @@
+
+#add-container {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+#add-container > * {
+  width: 100%;
+}
+
+#addComponent {
+  display: flex;
+  justify-content: center;
+}

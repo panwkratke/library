@@ -1,0 +1,162 @@
+<div class="booksView">
+
+  <div class="splitComponent">
+
+    <div class="splitPart1">
+
+      <cdk-virtual-scroll-viewport class="cdkContainer" itemSize="10">
+
+        <mat-nav-list *cdkVirtualFor="let book of books">
+
+          <a [routerLink]="['/library/userpanel/booksview', book.id]" mat-list-item>
+            <mat-icon matListIcon>import_contacts</mat-icon>
+            <h3 matLine>{{book.title}}</h3>
+            <p matLine>by {{book.author}}</p>
+          </a>
+          <mat-divider></mat-divider>
+
+        </mat-nav-list>
+
+      </cdk-virtual-scroll-viewport>
+
+    </div>
+
+    <div class="splitPart2">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+
+  <div class="splitComponent" style="margin-top: 20px;">
+
+    <div class="splitPart3">
+
+      <div class="searchComponent">
+
+        <form (ngSubmit)="onSubmitByGenre()" [formGroup]="searchByGenreForm">
+
+          <div class="searchContainer">
+
+            <mat-form-field>
+              <mat-select formControlName="genre" id="genre" placeholder="Pick a genre">
+                <mat-option *ngFor="let genre of genres" [value]="genre">{{genre}}</mat-option>
+              </mat-select>
+              <mat-hint align="end">Pick one book genre</mat-hint>
+            </mat-form-field>
+
+            <button [disabled]="searchByGenreForm.invalid" mat-raised-button type="submit">Search by genre
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+      <div class="searchComponent" matTooltip="You can enter a single word instead of full author name">
+
+        <form (ngSubmit)="onSubmitByAuthor()" [formGroup]="searchByAuthorForm">
+
+          <div class="searchContainer">
+
+            <mat-form-field hintLabel="Min 4 characters">
+              <input #input formControlName="author" id="author1" matInput minlength="4"
+                     placeholder="Enter the author">
+              <mat-hint align="end">{{input.value?.length || 0}}/4</mat-hint>
+              <mat-error *ngIf="input.value?.length < 4">Author min length required = 4</mat-error>
+            </mat-form-field>
+
+            <button [disabled]="searchByAuthorForm.invalid" mat-raised-button type="submit">Search by
+              author
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+      <div class="searchComponent" matTooltip="You can enter a single word instead of full title">
+
+        <form (ngSubmit)="onSubmitByTitle()" [formGroup]="searchByTitleForm">
+
+          <div class="searchContainer">
+
+            <mat-form-field hintLabel="Min 4 characters">
+              <input #input formControlName="title" id="title1" matInput minlength="4"
+                     placeholder="Enter the title">
+              <mat-hint align="end">{{input.value?.length || 0}}/4</mat-hint>
+              <mat-error *ngIf="input.value?.length < 4">Title min length required = 4</mat-error>
+            </mat-form-field>
+
+            <button [disabled]="searchByTitleForm.invalid" mat-raised-button type="submit">Search by title
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+    <div class="splitPart4">
+
+      <div class="searchComponent" matTooltip="If book with given id does not exist you will get an error">
+
+        <form (ngSubmit)="onSubmitByBookId()" [formGroup]="searchByBookId">
+
+          <div class="searchContainer">
+
+            <mat-form-field hintLabel="Min 1 character">
+              <input #input formControlName="bookId" id="bookId" matInput minlength="1"
+                     placeholder="Enter the book id">
+              <mat-hint align="end">{{input.value?.length || 0}}/1</mat-hint>
+              <mat-error *ngIf="input.value?.length < 1">Book id min length required = 1</mat-error>
+            </mat-form-field>
+
+            <button [disabled]="searchByBookId.invalid" mat-raised-button type="submit">Search by book id
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+      <div class="searchComponent" matTooltip="You have to enter full name of the author and full title"
+           style="margin-left: 10px;">
+
+        <form (ngSubmit)="onSubmitByTitleAndAuthor()" [formGroup]="searchByTitleAndAuthorForm">
+
+          <div class="searchContainer">
+
+            <mat-form-field hintLabel="Min 4 characters">
+              <input #input formControlName="title" id="title2" matInput minlength="4"
+                     placeholder="Enter the title">
+              <mat-hint align="end">{{input.value?.length || 0}}/4</mat-hint>
+              <mat-error *ngIf="input.value?.length < 4">Title min length required = 4</mat-error>
+            </mat-form-field>
+
+            <mat-form-field hintLabel="Min 4 characters">
+              <input #input formControlName="author" id="author2" matInput minlength="4"
+                     placeholder="Enter the author">
+              <mat-hint align="end">{{input.value?.length || 0}}/4</mat-hint>
+              <mat-error *ngIf="input.value?.length < 4">Author min length required = 4</mat-error>
+            </mat-form-field>
+
+            <button [disabled]="searchByTitleAndAuthorForm.invalid" mat-raised-button type="submit">Search
+              by title and author
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

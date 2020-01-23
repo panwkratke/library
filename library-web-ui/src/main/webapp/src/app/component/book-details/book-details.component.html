@@ -1,0 +1,68 @@
+<mat-list role="list">
+
+  <mat-list-item>
+    <mat-icon matListIcon>create</mat-icon>
+    <h3 matLine>{{book.title}}</h3>
+    <p matLine>Title</p>
+  </mat-list-item>
+
+  <mat-list-item>
+    <mat-icon matListIcon>person</mat-icon>
+    <h3 matLine>{{book.author}}</h3>
+    <p matLine>Author</p>
+  </mat-list-item>
+
+  <mat-list-item>
+    <mat-icon matListIcon>emoji_symbols</mat-icon>
+    <h3 matLine>{{book.genre}}</h3>
+    <p matLine>Genre</p>
+  </mat-list-item>
+
+  <mat-list-item>
+    <mat-icon matListIcon>money</mat-icon>
+    <h3 matLine>{{book.pages}}</h3>
+    <p matLine>Pages</p>
+  </mat-list-item>
+
+  <mat-list-item>
+    <mat-icon matListIcon>star</mat-icon>
+    <h3 matLine>{{book.id}}</h3>
+    <p matLine>Book id</p>
+  </mat-list-item>
+
+  <mat-list-item *ngIf="isAdmin || isCreator">
+    <mat-icon matListIcon>date_range</mat-icon>
+    <h3 matLine>{{book.creationDate}}</h3>
+    <p matLine>Creation date</p>
+  </mat-list-item>
+
+  <mat-list-item>
+
+    <div id="setButtons" style="height: auto;">
+
+      <div>
+        <button (click)="borrowBook(book.id)" mat-button>
+          <mat-icon matListIcon>archive</mat-icon>
+          <span>Borrow this book</span>
+        </button>
+      </div>
+
+      <div>
+        <button (click)="updateBook(book.id)" *ngIf="isAdmin" mat-button>
+          <mat-icon matListIcon>chrome_reader_mode</mat-icon>
+          <span>Update this book</span>
+        </button>
+      </div>
+
+      <div matTooltip="Book must not have active borrow orders">
+        <button (click)="deleteBook(book.id)" *ngIf="isCreator" [disabled]="!canDeleteBook()" mat-button>
+          <mat-icon matListIcon>speaker_notes_off</mat-icon>
+          <span>Delete this book</span>
+        </button>
+      </div>
+
+    </div>
+
+  </mat-list-item>
+
+</mat-list>

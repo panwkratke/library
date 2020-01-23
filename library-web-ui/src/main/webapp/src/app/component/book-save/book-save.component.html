@@ -1,0 +1,42 @@
+<div id="addComponent">
+
+  <form (ngSubmit)="onSubmit()" [formGroup]="saveBookForm">
+
+    <div id="add-container">
+      <mat-form-field hintLabel="Min 4 characters">
+        <input #input formControlName="author" id="author" matInput minlength="4" placeholder="Enter the author">
+        <mat-hint align="end">{{input.value?.length || 0}}/4</mat-hint>
+        <mat-error *ngIf="input.value?.length < 4">Author min length required = 4</mat-error>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field hintLabel="Min 4 characters">
+        <input #input formControlName="title" id="title" matInput minlength="4" placeholder="Enter the title">
+        <mat-hint align="end">{{input.value?.length || 0}}/4</mat-hint>
+        <mat-error *ngIf="input.value?.length < 4">Title min length required = 4</mat-error>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field hintLabel="Quantity must be grater than 0">
+        <input #input [type]="'number'" formControlName="quantity" id="quantity" matInput min="1"
+               placeholder="Enter quantity">
+        <mat-error *ngIf="input < 1 ">Quantity must be grater than 0</mat-error>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <mat-select formControlName="genre" id="genre" placeholder="Pick a genre">
+          <mat-option *ngFor="let genre of genres" [value]="genre">{{genre}}</mat-option>
+        </mat-select>
+        <mat-hint align="end">Pick one book genre</mat-hint>
+      </mat-form-field>
+      <br><br>
+
+      <button [disabled]="saveBookForm.invalid" mat-raised-button type="submit">Save the book</button>
+      <button mat-raised-button type="reset">Reset</button>
+
+    </div>
+
+  </form>
+
+</div>

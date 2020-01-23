@@ -1,0 +1,21 @@
+#navbar {
+  justify-content: space-between;
+  display: inline-flexbox;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+a {
+  padding-right: 1rem;
+  cursor: pointer;
+  cursor: hand;
+}
+
+#menu {
+  justify-content: space-between;
+}
+
+#child {
+  margin-top: 35px;
+}

@@ -1,0 +1,13 @@
+#login-container {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+#login-container > * {
+  width: 100%;
+}
+
+#loginComponent {
+  display: flex;
+  justify-content: center;
+}

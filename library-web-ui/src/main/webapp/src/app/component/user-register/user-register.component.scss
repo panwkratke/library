@@ -1,0 +1,13 @@
+#register-container {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+#register-container > * {
+  width: 100%;
+}
+
+#registerComponent {
+  display: flex;
+  justify-content: center;
+}

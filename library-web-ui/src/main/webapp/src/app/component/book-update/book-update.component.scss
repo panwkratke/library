@@ -1,0 +1,13 @@
+#update-container {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+#update-container > * {
+  width: 100%;
+}
+
+#updateComponent {
+  display: flex;
+  justify-content: center;
+}

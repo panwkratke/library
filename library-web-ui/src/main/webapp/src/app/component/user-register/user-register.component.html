@@ -1,0 +1,55 @@
+<div id="registerComponent">
+
+  <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+
+    <div id="register-container">
+
+      <mat-form-field hintLabel="Min 3 characters">
+        <input #input formControlName="firstName" id="firstName" matInput minlength="3"
+               placeholder="Enter first name">
+        <mat-hint align="end">{{input.value?.length || 0}}/3</mat-hint>
+        <mat-error *ngIf="input.value?.length < 3">First name min length required = 3</mat-error>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field hintLabel="Min 3 characters">
+        <input #input formControlName="lastName" id="lastName" matInput minlength="3"
+               placeholder="Enter last name">
+        <mat-hint align="end">{{input.value?.length || 0}}/3</mat-hint>
+        <mat-error *ngIf="input.value?.length < 3">Last name min length required = 3</mat-error>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field hintLabel="Min 3 characters">
+        <input #input formControlName="username" id="username" matInput minlength="3"
+               placeholder="Enter usernname">
+        <mat-hint align="end">{{input.value?.length || 0}}/3</mat-hint>
+        <mat-error *ngIf="input.value?.length < 3">Username min length required = 3</mat-error>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field hintLabel="Min 3 characters">
+        <input #input [type]="'password'" formControlName="password" id="password" matInput minlength="3"
+               placeholder="Enter password">
+        <mat-hint align="end">{{input.value?.length || 0}}/3</mat-hint>
+        <mat-error *ngIf="input.value?.length < 3">Password min length required = 3</mat-error>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <mat-select formControlName="role" id="role" placeholder="Pick a role">
+          <mat-option *ngFor="let role of roles" [value]="role">{{role}}</mat-option>
+        </mat-select>
+        <mat-hint align="end">Only User role available for testing</mat-hint>
+      </mat-form-field>
+      <br><br>
+
+      <button [disabled]="registerForm.invalid" mat-raised-button type="submit">Register</button>
+      <button mat-raised-button type="reset">Reset</button>
+
+    </div>
+
+  </form>
+
+</div>
+
