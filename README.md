@@ -29,7 +29,7 @@ In the near future I am planning to upload docker image of the app.
 Please build the app with the default profile or dev profile - prod profile not yet finished.
 
 You can say the app is done with the online library motive. <br>
-At the star you should register a new user. <br>
+At the start you should register a new user. <br>
 During registration you will be asked to pick a role from USER, ADMIN, CREATOR: <br>
 
 USER : <br>
