@@ -5,15 +5,15 @@
 ### Hello everyone!
 
 Welcome to my java + maven + spring boot + angular + type script sample app! <br>
-First of all I need to say that I am <b>not yet</b> ;) a professional IT programmer. <br>
-This app is only to show my subjective example of what you can do when you learn mentioned above technologies. <br>
-And as well my own understanding and capabilities of what I am able to do with them. <br>
+First of all, I need to say that, I am <b>not yet</b> ;) a professional IT programmer. <br>
+This app is only to show my subjective example of what you can do, when you learn mentioned above technologies. <br>
+As well my own understanding and capabilities of what I am able to do with them. <br>
 All the work has been done for the purpose of future job interviews. <br>
 It is not perfect and I'm still facing some issues concerning the application. <br>
-If you will have any feedback on it you are more than welcome to share it with me! <br>
+If you will have any feedback on it, you are more than welcome to share it with me! <br>
 I have used Intellij IDEA and Visual Studio Code when creating the project. <br>
 
-### what you should have to run the app
+### what you should have, to run the app
 
 - java version "11.0.2" <br>
 - maven version "3.6.2" <br>
@@ -55,8 +55,8 @@ CREATOR additionally : <br>
 
 <b>This app uses remote MySQL database so please delete ONLY users or books which you have earlier created!!!</b> <br>
 
-After you register login to the app with credentials chosen at registration step.
+After you register, login to the app with credentials chosen at registration step.
 
-Have in mind that you probably will encounter some errors but anyways have fun with the app!
+Have in mind, that you will probably encounter some errors, but anyways have fun with the app!
 
 
