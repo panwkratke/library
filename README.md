@@ -5,7 +5,7 @@
 ### Hello everyone!
 
 Welcome to my java + maven + spring boot + angular + type script sample app! <br>
-First of all I need to say that I am <b>not yet</b> ;) a professional it programmer. <br>
+First of all I need to say that I am <b>not yet</b> ;) a professional IT programmer. <br>
 This app is only to show my subjective example of what you can do when you learn mentioned above technologies. <br>
 And as well my own understanding and capabilities of what I am able to do with them. <br>
 All the work has been done for the purpose of future job interviews. <br>
