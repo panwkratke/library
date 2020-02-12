@@ -22,7 +22,7 @@ I have used Intellij IDEA and Visual Studio Code when creating the project. <br>
 - angular version "8.2.14" <br>
 - angular materials and hammerjs <br>
 
-In the near future I am planning to upload docker image of the app.
+In the near future I plan to upload docker image of the app.
 
 ### what you need to know 
 
