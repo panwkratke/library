@@ -31,6 +31,7 @@ Please build the app with the default profile or dev profile - prod profile not 
 You can say the app is done with the online library motive. <br>
 At the star you should register a new user. <br>
 During registration you will be asked to pick a role from USER, ADMIN, CREATOR: <br>
+
 USER : <br>
 - can log in, log out <br>
 - can see his user info <br>
@@ -40,6 +41,7 @@ USER : <br>
 - can borrow the chosen book and later return it <br>
 - can check for all earlier borrowed books <br>
 - can see his active borrow order details <br>
+
 ADMIN additionally : <br>
 - can add a new book <br>
 - can update the book <br>
@@ -47,9 +49,12 @@ ADMIN additionally : <br>
 - can see chosen user info <br>
 - can see all crated borrow orders <br>
 - can return a book from any chosen borrow order <br>
+
 CREATOR additionally : <br>
 - can delete books or users <br>
+
 <b>This app uses remote MySQL database so please delete ONLY users or books which you have earlier created!!!</b> <br>
+
 After you register login to the app with credentials chosen at registration step.
 
 Have in mind that you probably will encounter some errors but anyways have fun with the app!
