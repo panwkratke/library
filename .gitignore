@@ -29,3 +29,7 @@ build/
 
 ### VS Code ###
 .vscode/
+/library-web-ui/src/main/webapp/node/node_modules/npm/
+/library-web-ui/src/main/webapp/node/node.exe
+/library-web-ui/src/main/webapp/node/npm
+/library-web-ui/src/main/webapp/node/npm.cmd
