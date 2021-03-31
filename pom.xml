@@ -25,7 +25,7 @@
 		<java.version>11</java.version>
 		<commons-codec.version>1.12</commons-codec.version>
 		<jjwt.version>0.9.1</jjwt.version>
-		<guava.version>28.0-jre</guava.version>
+		<guava.version>29.0-jre</guava.version>
 		<powermock-api-mockito2.version>2.0.4</powermock-api-mockito2.version>
 	</properties>
 
